@@ -67,6 +67,7 @@ export function PokemonCard({ onPokemonData }) {
           initial="hidden" 
           animate="visible" 
           whileHover={{ scale: 1.1 }} 
+          key={onPokemonData.id}
         >
           <Stack direction='column' maxW='230' bg={colors.primary} borderRadius='16' p='2' shadow='md'>
             <HStack justify='space-between'>
@@ -132,6 +133,7 @@ export function PokemonCard({ onPokemonData }) {
         initial="hidden" 
         animate="visible" 
         whileHover={{ scale: 1.1 }} 
+        key={onPokemonData.id}
       >
         <Stack direction='column' minW='290' minH='300' bg={colors.primary} borderRadius='16' p='2' shadow='md'>
           <HStack justify='space-between'>
