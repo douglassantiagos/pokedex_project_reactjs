@@ -241,10 +241,10 @@ export default function Home() {
             </Flex>
 
             <Grid gap={[4, 4, 4, 7]} alignItems='flex-start' templateColumns={['repeat(2, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}>
-              { pokemonsToShow.map(item => {
+              { pokemonsToShow.map((item, index) => {
                 return (
                   <PokemonCard               
-                    key={item.id}
+                    key={`${item.id}+${index}`}
                     onPokemonData={item}
                   />                           
                 )
