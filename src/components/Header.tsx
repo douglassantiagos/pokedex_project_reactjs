@@ -1,12 +1,12 @@
-import { Flex, Image } from "@chakra-ui/react";
-import Link from "next/link";
+import { Flex, Image, Link } from "@chakra-ui/react";
+// import Link from "next/link";
 
 export function Header() {
   return (
     <Flex bgGradient='linear(to-b, #C20001, #B50001)' p='5' justify='center'>
-      <a href='/'>
+      <Link href='/'>
         <Image src="../logo.svg"/>      
-      </a>
+      </Link>
     </Flex>
   )
 }
