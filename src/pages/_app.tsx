@@ -7,7 +7,7 @@ import '../styles/styles.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <AnimateSharedLayout type="crossfade">
+    <AnimateSharedLayout>
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />
       </ChakraProvider>
