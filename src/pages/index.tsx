@@ -241,6 +241,7 @@ export default function Home() {
               { pokemonsToShow.map(item => {
                 return (
                   <PokemonCard               
+                    key={item.id}
                     onPokemonData={item}
                   />                           
                 )
