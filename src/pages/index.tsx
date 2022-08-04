@@ -46,6 +46,7 @@ export default function Home() {
     
     const getPokemonSelected = toArray.map((pokemon) => {
       return {
+        key: pokemon.id,
         id: pokemon.id,
         name: pokemon.name,
         image: pokemon.sprites.other['official-artwork'].front_default,
@@ -78,6 +79,7 @@ export default function Home() {
 
       const listAllPokemonsData = allPokemonsData.map((pokemon) => {
         return {
+          key: pokemon.id,
           id: pokemon.id,
           name: pokemon.name,
           image: pokemon.sprites.other['official-artwork'].front_default,
@@ -138,6 +140,7 @@ export default function Home() {
       
       setPokemonsTypeSelectedData(pokemonsTypeSelected.map((pokemon) => {
         return {
+          key: pokemon.id,
           id: pokemon.id,
           name: pokemon.name,
           image: pokemon.sprites.other['official-artwork'].front_default,
