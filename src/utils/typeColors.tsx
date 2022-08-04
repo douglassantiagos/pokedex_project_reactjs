@@ -1,5 +1,6 @@
 export function typeColors(type) {  
     let primary = '';
+    let secondary = '';
 
     if (type[0] === 'normal') {
         primary = 'orange.400'
@@ -39,8 +40,47 @@ export function typeColors(type) {
         primary = 'pink.300'
     }
 
+    if (type[1] === 'normal') {
+        secondary = 'orange.400'
+    } else if (type[1] === 'fighting') {
+        secondary = 'orange.200'
+    } else if (type[1] === 'flying') {
+        secondary = 'red.200'    
+    } else if (type[1] === 'poison') {
+        secondary = 'purple.400'
+    } else if (type[1] === 'ground') {
+        secondary = 'yellow.500'
+    } else if (type[1] === 'rock') {
+        secondary = 'gray.400'
+    } else if (type[1] === 'bug') {
+        secondary = 'green.300'
+    } else if (type[1] === 'ghost') {
+        secondary = 'purple.300'
+    } else if (type[1] === 'steel') {
+        secondary = 'gray.300'
+    } else if (type[1] === 'fire') {
+        secondary = 'red.400'
+    } else if (type[1] === 'water') {
+        secondary = 'blue.400'
+    } else if (type[1] === 'grass') {
+        secondary = 'green.400'
+    } else if (type[1] === 'electric') {
+        secondary = 'yellow.400'
+    } else if (type[1] === 'psychic') {
+        secondary = 'purple.200'
+    } else if (type[1] === 'ice') {
+        secondary = 'cyan.300'
+    } else if (type[1] === 'dragon') {
+        secondary = 'orange'
+    } else if (type[1] === 'dark') {
+        secondary = 'blue.600'
+    } else if (type[1] === 'fairy') {
+        secondary = 'pink.300'
+    }
+
     const colors = {
         primary,
+        secondary
     }
 
     return colors;

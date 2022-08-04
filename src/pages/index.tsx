@@ -9,6 +9,7 @@ import { PokemonCard } from "../components/PokemonCard";
 import { Footer } from "../components/Footer";
 import { getAllPokemons, getAllTypeData, getPokemon, getTypeData } from "../services";
 import Head from "next/head";
+import { ScrollToTopButton } from "../components/scrollToTopButton";
 
 export default function Home() {
   const [pokemon, setPokemon] = useState("");
@@ -246,8 +247,7 @@ export default function Home() {
               })}
             </Grid>
 
-            { 
-              amountCardsOnPage <= pokemonData.length && 
+            { amountCardsOnPage <= pokemonData.length && 
               // isLoadingNextCard ? 
               // <Flex alignSelf='center' w='10' h='10'>
               //   <Loading />
@@ -271,6 +271,8 @@ export default function Home() {
                 </Button>
               </Flex>
             }
+
+            <ScrollToTopButton />
           </Flex>              
           }           
         </Flex>

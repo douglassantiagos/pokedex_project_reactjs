@@ -7,6 +7,7 @@ import { getTypeData } from '../services';
 
 export type ColorsData = {
   primary: string;
+  secondary: string;
 }
 
 export default function Modal({ data, onType }) { 
@@ -81,14 +82,15 @@ export default function Modal({ data, onType }) {
           <Stack bg='white'>
             <motion.div className="card-image-container" layoutId={`card-image-container-${data.id}`}>
               <Flex
+                flexWrap='wrap'
                 bg={colors.primary} 
                 bgImage="./pokeballBg.svg"
                 bgPosition='left'
                 bgRepeat='no-repeat'
                 bgSize='contain'
-                w="50%"
-                h='70%'
-                align='center'          
+                maxW={["90%", "100%", "100%", "85%", "65%", "50%"]}
+                h={['76%','76%', '76%', '76%', '76%', '70%']}
+                align='center'      
               >
                 <img className="card-image" src={data.image} alt="ImagePokemon" />
               </Flex>
@@ -109,7 +111,7 @@ export default function Modal({ data, onType }) {
                   (onType[0]).slice(1)}
                 </Text>
                 {onType[1] === undefined ? null :
-                  <Text fontSize='sm' color='white' fontWeight='normal' ml='1' bg={onType[1] === 'undefined' ? null : colors.primary} w='auto' borderRadius='20' p='1' px='4'>   
+                  <Text fontSize='sm' color='white' fontWeight='normal' ml='1' bg={onType[1] === 'undefined' ? null : colors.secondary} w='auto' borderRadius='20' p='1' px='4'>   
                     {(onType[1]).charAt(0).toUpperCase() + 
                     (onType[1]).slice(1)}         
                   </Text>            
