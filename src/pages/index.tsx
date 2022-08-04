@@ -44,9 +44,9 @@ export default function Home() {
 
     toArray.push(apiPokemonData)
     
-    const getPokemonSelected = toArray.map((pokemon) => {
+    const getPokemonSelected = toArray.map((pokemon, index) => {
       return {
-        key: pokemon.id,
+        key: index,
         id: pokemon.id,
         name: pokemon.name,
         image: pokemon.sprites.other['official-artwork'].front_default,
@@ -77,9 +77,9 @@ export default function Home() {
 
       const allPokemonsData = await Promise.all(promisesAllPokemonsData);
 
-      const listAllPokemonsData = allPokemonsData.map((pokemon) => {
+      const listAllPokemonsData = allPokemonsData.map((pokemon, index) => {
         return {
-          key: pokemon.id,
+          key: index,
           id: pokemon.id,
           name: pokemon.name,
           image: pokemon.sprites.other['official-artwork'].front_default,
@@ -138,9 +138,9 @@ export default function Home() {
         promisesPokemonsTypeSelected[0]
       ); 
       
-      setPokemonsTypeSelectedData(pokemonsTypeSelected.map((pokemon) => {
+      setPokemonsTypeSelectedData(pokemonsTypeSelected.map((pokemon, index) => {
         return {
-          key: pokemon.id,
+          key: index,
           id: pokemon.id,
           name: pokemon.name,
           image: pokemon.sprites.other['official-artwork'].front_default,
