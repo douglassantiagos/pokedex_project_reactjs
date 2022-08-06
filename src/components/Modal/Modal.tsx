@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Flex, Stack, Text, HStack, VStack } from '@chakra-ui/react';
 import { motion } from "framer-motion"
-import { typeColors } from '../utils/typeColors';
-import { formattedID } from '../utils/formattedID';
-import { getTypeData } from '../services';
+import { formattedID } from '../../utils/formattedID';
+import { getTypeData } from '../../services';
+import { Stats } from './Stats'
+import { Weakness } from './Weakness';
 
 export default function Modal({ data, onType, colors }) { 
   const [ability, setAbility] = useState([])
@@ -14,7 +15,6 @@ export default function Modal({ data, onType, colors }) {
   async function getAbilitiesNameData() {
     const promisesAbilitiesData = await data.abilities.map((item) => item.ability.name)
     const abilitiesData = await Promise.all(promisesAbilitiesData)
-
     setAbility(abilitiesData)
   }
 
@@ -23,7 +23,6 @@ export default function Modal({ data, onType, colors }) {
     const eachTypeData = await Promise.all(promisesEachTypeData);
     const listWeaknessesData = eachTypeData.map((item) => item.damage_relations.double_damage_from);    
     const weaknessesNameData = listWeaknessesData[0].map((item) => item.name);
-
     setWeakness(weaknessesNameData);
   }
 
@@ -35,8 +34,6 @@ export default function Modal({ data, onType, colors }) {
     const promisesAmountStatsData = await data.stats.map((item) => item.base_stat)
     const amountStatsData = await Promise.all(promisesAmountStatsData)
     setAmountStat(amountStatsData)
-
-    console.log('STATS: ', amountStatsData)
   }
   
   useEffect(() => { 
@@ -44,12 +41,6 @@ export default function Modal({ data, onType, colors }) {
     getWeaknessesData();
     getStatsData()
   }, [])
-
-  // function formatedWeight(data) {
-  //   const str = data.toString().split(".")
-  //   str[0] = str[0].replace(/\B(?=(\d{2})+(?!\d))/g, ".");
-  //   return str.join(".") 
-  // }
 
   return (
     <>      
@@ -75,9 +66,7 @@ export default function Modal({ data, onType, colors }) {
                 bgRepeat='no-repeat'
                 bgSize='contain'
                 maxW={["35%", "60%"]}
-                // maxW={["90%", "100%", "100%", "85%", "65%", "50%"]}
                 h={'90%'}
-                // h={['76%','76%', '76%', '76%', '76%', '70%']}
                 align='center'      
               >
                 <img className="card-image" src={data.image} alt="ImagePokemon" />
@@ -87,21 +76,18 @@ export default function Modal({ data, onType, colors }) {
             <motion.div className="title-container" layoutId={`title-container-${data.id}`}>
               <HStack>
                 <Text fontSize='3xl' fontWeight='bold' >
-                  {data.name.charAt(0).toUpperCase() + 
-                  (data.name).slice(1)}
+                  {data.name.charAt(0).toUpperCase() + (data.name).slice(1)}
                 </Text>
                 <Text>{formattedID(data.id)}</Text>
               </HStack>
 
               <HStack spacing='1' mt='2'>
                 <Text fontSize='sm' color='white' bg={colors.primary} fontWeight='normal' borderRadius='20' p='1' px='4'>
-                  {(onType[0]).charAt(0).toUpperCase() + 
-                  (onType[0]).slice(1)}
+                  {(onType[0]).charAt(0).toUpperCase() + (onType[0]).slice(1)}
                 </Text>
                 {onType[1] === undefined ? null :
                   <Text fontSize='sm' color='white' fontWeight='normal' ml='1' bg={onType[1] === 'undefined' ? null : colors.secondary} w='auto' borderRadius='20' p='1' px='4'>   
-                    {(onType[1]).charAt(0).toUpperCase() + 
-                    (onType[1]).slice(1)}         
+                    {(onType[1]).charAt(0).toUpperCase() + (onType[1]).slice(1)}         
                   </Text>            
                 }
               </HStack>
@@ -114,82 +100,29 @@ export default function Modal({ data, onType, colors }) {
 
               <Text fontSize='sm' fontWeight='bold' color='green.500' mt='4'>Abilities</Text>
               <Text fontWeight='bold' fontSize='sm'>
-                {(ability[0] + ', ').charAt(0).toUpperCase() + 
-                (ability[0] + ', ').slice(1)}
-
-                {(ability[1] + ' ').charAt(0).toUpperCase() + 
-                (ability[1] + ' ').slice(1)}
+                {(ability[0] + ', ').charAt(0).toUpperCase() + (ability[0] + ', ').slice(1)}
+                {(ability[1] + ' ').charAt(0).toUpperCase() + (ability[1] + ' ').slice(1)}
               </Text>
 
               <Text fontSize='sm' fontWeight='bold' color='red.500' mt='4'>Weakness</Text>
               <Flex>
-                <Text fontWeight='bold' fontSize='sm' borderWidth={1} borderColor='#2F3133' borderRadius='20' px='4' py='1' >
-                  {(weakness[0] + ' ').charAt(0).toUpperCase() + 
-                  (weakness[0] + ' ').slice(1)}
-                </Text>
-                
-                {weakness[1] === undefined ? null :
-                  <Text fontWeight='bold' fontSize='sm' borderWidth={1} borderColor='#2F3133' borderRadius='20' px='4' py='1' ml='1'>
-                    {(weakness[1] + ' ').charAt(0).toUpperCase() + 
-                    (weakness[1] + ' ').slice(1)}
-                  </Text>
-                }
-
-                {weakness[2] === undefined ? null :
-                  <Text fontWeight='bold' fontSize='sm' borderWidth={1} borderColor='#2F3133' borderRadius='20' px='4' py='1' ml='1'>
-                    {(weakness[2] + ' ').charAt(0).toUpperCase() + 
-                    (weakness[2] + ' ').slice(1)}
-                  </Text>
-                }
+                <Weakness weakness={weakness[0]} />
+                { weakness[1] === undefined ? null : <Weakness weakness={weakness[1]} /> }
+                { weakness[2] === undefined ? null : <Weakness weakness={weakness[2]} /> }
               </Flex>
               <Flex mt='1'>
-                {weakness[3] === undefined ? null :
-                  <Text fontWeight='bold' fontSize='sm' borderWidth={1} borderColor='#2F3133' borderRadius='20' px='4' py='1' ml='1'>
-                    {(weakness[3] + ' ').charAt(0).toUpperCase() + 
-                    (weakness[3] + ' ').slice(1)}
-                  </Text>
-                }
-
-                {weakness[4] === undefined ? null :
-                  <Text fontWeight='bold' fontSize='sm' borderWidth={1} borderColor='#2F3133' borderRadius='20' px='4' py='1' ml='1'>
-                    {(weakness[4] + ' ').charAt(0).toUpperCase() + 
-                    (weakness[4] + ' ').slice(1)}
-                  </Text>
-                }
+                { weakness[3] === undefined ? null : <Weakness weakness={weakness[3]} /> }
+                { weakness[4] === undefined ? null : <Weakness weakness={weakness[4]} /> }
               </Flex>
 
               <VStack align='flex-end' spacing='3' mt='4'>
                 <Text fontSize='sm' fontWeight='bold' color='purple'>Stats</Text>
-
-                <HStack borderBottomWidth={1} w='100%' justify='space-between'>
-                  <Text fontSize='sm' pr='40'>{String(statName[0]).toUpperCase()}</Text>
-                  <Text fontSize='sm'>{amountStat[0]}</Text>
-                </HStack>
-
-                <HStack borderBottomWidth={1} w='100%' justify='space-between'>
-                  <Text fontSize='sm'>{String(statName[1]+'').charAt(0).toUpperCase()+(statName[1]+'').slice(1)}</Text>
-                  <Text fontSize='sm'>{amountStat[1]}</Text>
-                </HStack>
-
-                <HStack borderBottomWidth={1} w='100%' justify='space-between'>
-                  <Text fontSize='sm'>{String(statName[2]+'').charAt(0).toUpperCase()+(statName[2]+'').slice(1)}</Text>
-                  <Text fontSize='sm'>{amountStat[2]}</Text>
-                </HStack>
-
-                <HStack borderBottomWidth={1} w='100%' justify='space-between'>
-                  <Text fontSize='sm'>{String(statName[3]+'').charAt(0).toUpperCase()+(statName[3]+'').slice(1)}</Text>
-                  <Text fontSize='sm'>{amountStat[3]}</Text>
-                </HStack>
-
-                <HStack borderBottomWidth={1} w='100%' justify='space-between'>
-                  <Text fontSize='sm'>{String(statName[4]+'').charAt(0).toUpperCase()+(statName[4]+'').slice(1)}</Text>
-                  <Text fontSize='sm'>{amountStat[4]}</Text>
-                </HStack>
-
-                <HStack borderBottomWidth={1} w='100%' justify='space-between'>
-                  <Text fontSize='sm'>{String(statName[5]+'').charAt(0).toUpperCase()+(statName[5]+'').slice(1)}</Text>
-                  <Text fontSize='sm'>{amountStat[5]}</Text>
-                </HStack>
+                <Stats statName={String(statName[0]).toUpperCase()} amountStat={amountStat[0]} />
+                <Stats statName={String(statName[1]+'').charAt(0).toUpperCase()+(statName[1]+'').slice(1)} amountStat={amountStat[1]} />
+                <Stats statName={String(statName[2]+'').charAt(0).toUpperCase()+(statName[2]+'').slice(1)} amountStat={amountStat[2]} />
+                <Stats statName={String(statName[3]+'').charAt(0).toUpperCase()+(statName[3]+'').slice(1)} amountStat={amountStat[3]} />
+                <Stats statName={String(statName[4]+'').charAt(0).toUpperCase()+(statName[4]+'').slice(1)} amountStat={amountStat[4]} />
+                <Stats statName={String(statName[5]+'').charAt(0).toUpperCase()+(statName[5]+'').slice(1)} amountStat={amountStat[5]} />
               </VStack>
             </motion.div>
 

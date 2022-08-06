@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion"
 
 import { formattedID } from "../utils/formattedID";
 import { typeColors } from "../utils/typeColors";
-import Modal from "./Modal";
+import Modal from "./Modal/Modal";
 
 export type ColorsData = {
   primary: string;
@@ -26,7 +26,7 @@ export function PokemonCard({ onPokemonData }) {
   useEffect(() => {  
     getTypesNameData();
 
-  }, [onPokemonData])
+  }, [])
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
