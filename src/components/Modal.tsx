@@ -89,7 +89,7 @@ export default function Modal({ data, onType }) {
                 bgRepeat='no-repeat'
                 bgSize='contain'
                 maxW={["90%", "100%", "100%", "85%", "65%", "50%"]}
-                h={['76%','76%', '76%', '76%', '76%', '70%']}
+                h={['76%','76%', '76%', '76%', '76%', '86%', '70%']}
                 align='center'      
               >
                 <img className="card-image" src={data.image} alt="ImagePokemon" />

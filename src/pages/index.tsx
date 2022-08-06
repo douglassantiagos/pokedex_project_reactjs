@@ -252,10 +252,10 @@ export default function Home() {
             </Grid>
 
             { amountCardsOnPage <= pokemonData.length && 
-              // isLoadingNextCard ? 
-              // <Flex alignSelf='center' w='10' h='10'>
-              //   <Loading />
-              // </Flex> :
+              isLoadingNextCard ? 
+              <Flex alignSelf='center' w='10' h='10'>
+                <Loading />
+              </Flex> :
               <Flex mb='8' justify='center'>
                 <Button
                   mt='10'
