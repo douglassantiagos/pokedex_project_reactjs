@@ -9,7 +9,7 @@ import { Sidebar } from "../components/Sidebar";
 import { PokemonCard } from "../components/PokemonCard";
 import { Footer } from "../components/Footer";
 import { getAllPokemons, getAllTypeData, getPokemon, getTypeData } from "../services";
-import { ScrollToTopButton } from "../components/ScrollToTopButton";
+import { ScrollToTopButton } from "../components/scrollToTopButton";
 
 export default function Home() {
   const [pokemon, setPokemon] = useState("");
