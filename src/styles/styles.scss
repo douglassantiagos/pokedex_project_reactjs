@@ -68,7 +68,7 @@
 }
 
 .open .card-content {
-  height: auto;
+  height: 86vh;
   max-width: 700px;
   overflow: hidden;
   pointer-events: none;
@@ -83,13 +83,12 @@
 }
 
 .card-image-container {
-  position: absolute;
+  // position: absolute;
   top: 0;
   left: 0;
   overflow: hidden;
   height: 100vh;
-  // height: 420px;
-  width: 43vw;
+  max-width: 100%;
 }
 
 .open .card-image-container,
@@ -106,10 +105,12 @@
 
 .open .title-container {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-end;
-  // top: 30px;
-  right: 30px;
+  top: 15px;
+  right: 25px;
+  max-height: 100vh;
 }
 
 .type {

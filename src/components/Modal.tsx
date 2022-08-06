@@ -79,7 +79,7 @@ export default function Modal({ data, onType }) {
 
       <div className="card-content-container open">
         <motion.div className="card-content" layoutId={`card-container-${data.id}`}>
-          <Stack bg='white'>
+          <Stack flexWrap='wrap' bg='white'>
             <motion.div className="card-image-container" layoutId={`card-image-container-${data.id}`}>
               <Flex
                 flexWrap='wrap'
@@ -88,8 +88,10 @@ export default function Modal({ data, onType }) {
                 bgPosition='left'
                 bgRepeat='no-repeat'
                 bgSize='contain'
-                maxW={["90%", "100%", "100%", "85%", "65%", "50%"]}
-                h={['76%','76%', '76%', '76%', '76%', '86%', '70%']}
+                maxW={["35%", "60%"]}
+                // maxW={["90%", "100%", "100%", "85%", "65%", "50%"]}
+                h={'90%'}
+                // h={['76%','76%', '76%', '76%', '76%', '70%']}
                 align='center'      
               >
                 <img className="card-image" src={data.image} alt="ImagePokemon" />
@@ -105,7 +107,7 @@ export default function Modal({ data, onType }) {
                 <Text>{formattedID(data.id)}</Text>
               </HStack>
 
-              <HStack spacing='1'>
+              <HStack spacing='1' mt='2'>
                 <Text fontSize='sm' color='white' bg={colors.primary} fontWeight='normal' borderRadius='20' p='1' px='4'>
                   {(onType[0]).charAt(0).toUpperCase() + 
                   (onType[0]).slice(1)}
@@ -118,7 +120,7 @@ export default function Modal({ data, onType }) {
                 }
               </HStack>
 
-              <Text fontSize='sm' fontWeight='bold' color='orange.500' mt='3'>Height</Text>
+              <Text fontSize='sm' fontWeight='bold' color='orange.500' mt='4'>Height</Text>
               <Text fontWeight='bold' fontSize='sm'>{data.height}m</Text>
 
               <Text fontSize='sm' fontWeight='bold' color='blue.500' mt='4'>Weight</Text>
@@ -170,41 +172,39 @@ export default function Modal({ data, onType }) {
                 }
               </Flex>
 
-              <Flex mt='4'>
-                <VStack align='flex-end' spacing='3'>
-                  <Text fontSize='sm' fontWeight='bold' alignSelf='flex-end' color='purple'>Stats</Text>
+              <VStack align='flex-end' spacing='3' mt='4'>
+                <Text fontSize='sm' fontWeight='bold' color='purple'>Stats</Text>
 
-                  <HStack borderBottomWidth={1} w='100%' justify='space-between'>
-                    <Text fontSize='sm' pr='40'>{String(statName[0]).toUpperCase()}</Text>
-                    <Text fontSize='sm'>{amountStat[0]}</Text>
-                  </HStack>
+                <HStack borderBottomWidth={1} w='100%' justify='space-between'>
+                  <Text fontSize='sm' pr='40'>{String(statName[0]).toUpperCase()}</Text>
+                  <Text fontSize='sm'>{amountStat[0]}</Text>
+                </HStack>
 
-                  <HStack borderBottomWidth={1} w='100%' justify='space-between'>
-                    <Text fontSize='sm'>{String(statName[1]+'').charAt(0).toUpperCase()+(statName[1]+'').slice(1)}</Text>
-                    <Text fontSize='sm'>{amountStat[1]}</Text>
-                  </HStack>
+                <HStack borderBottomWidth={1} w='100%' justify='space-between'>
+                  <Text fontSize='sm'>{String(statName[1]+'').charAt(0).toUpperCase()+(statName[1]+'').slice(1)}</Text>
+                  <Text fontSize='sm'>{amountStat[1]}</Text>
+                </HStack>
 
-                  <HStack borderBottomWidth={1} w='100%' justify='space-between'>
-                    <Text fontSize='sm'>{String(statName[2]+'').charAt(0).toUpperCase()+(statName[2]+'').slice(1)}</Text>
-                    <Text fontSize='sm'>{amountStat[2]}</Text>
-                  </HStack>
+                <HStack borderBottomWidth={1} w='100%' justify='space-between'>
+                  <Text fontSize='sm'>{String(statName[2]+'').charAt(0).toUpperCase()+(statName[2]+'').slice(1)}</Text>
+                  <Text fontSize='sm'>{amountStat[2]}</Text>
+                </HStack>
 
-                  <HStack borderBottomWidth={1} w='100%' justify='space-between'>
-                    <Text fontSize='sm'>{String(statName[3]+'').charAt(0).toUpperCase()+(statName[3]+'').slice(1)}</Text>
-                    <Text fontSize='sm'>{amountStat[3]}</Text>
-                  </HStack>
+                <HStack borderBottomWidth={1} w='100%' justify='space-between'>
+                  <Text fontSize='sm'>{String(statName[3]+'').charAt(0).toUpperCase()+(statName[3]+'').slice(1)}</Text>
+                  <Text fontSize='sm'>{amountStat[3]}</Text>
+                </HStack>
 
-                  <HStack borderBottomWidth={1} w='100%' justify='space-between'>
-                    <Text fontSize='sm'>{String(statName[4]+'').charAt(0).toUpperCase()+(statName[4]+'').slice(1)}</Text>
-                    <Text fontSize='sm'>{amountStat[4]}</Text>
-                  </HStack>
+                <HStack borderBottomWidth={1} w='100%' justify='space-between'>
+                  <Text fontSize='sm'>{String(statName[4]+'').charAt(0).toUpperCase()+(statName[4]+'').slice(1)}</Text>
+                  <Text fontSize='sm'>{amountStat[4]}</Text>
+                </HStack>
 
-                  <HStack borderBottomWidth={1} w='100%' justify='space-between'>
-                    <Text fontSize='sm'>{String(statName[5]+'').charAt(0).toUpperCase()+(statName[5]+'').slice(1)}</Text>
-                    <Text fontSize='sm'>{amountStat[5]}</Text>
-                  </HStack>
-                </VStack>
-              </Flex>
+                <HStack borderBottomWidth={1} w='100%' justify='space-between'>
+                  <Text fontSize='sm'>{String(statName[5]+'').charAt(0).toUpperCase()+(statName[5]+'').slice(1)}</Text>
+                  <Text fontSize='sm'>{amountStat[5]}</Text>
+                </HStack>
+              </VStack>
             </motion.div>
 
             <motion.div className="content-container" animate>
