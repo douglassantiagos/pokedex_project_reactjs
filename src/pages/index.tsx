@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import Head from "next/head";
 import { Grid, Flex, Text, Image, Button, Stack} from "@chakra-ui/react";
 
 import { Header } from "../components/Header";
@@ -8,7 +9,6 @@ import { Sidebar } from "../components/Sidebar";
 import { PokemonCard } from "../components/PokemonCard";
 import { Footer } from "../components/Footer";
 import { getAllPokemons, getAllTypeData, getPokemon, getTypeData } from "../services";
-import Head from "next/head";
 import { ScrollToTopButton } from "../components/ScrollToTopButton";
 
 export default function Home() {
