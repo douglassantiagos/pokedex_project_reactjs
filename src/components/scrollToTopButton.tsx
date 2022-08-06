@@ -1,8 +1,13 @@
-import { Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Button, Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 export function ScrollToTopButton() {
   const [ pageYPosition, setPageYPosition ] = useState(0);
+
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true
+  })
 
   useEffect(() => {
     function getPageYAfterScroll() {
@@ -18,6 +23,33 @@ export function ScrollToTopButton() {
     })
   }
 
+  if(!isWideVersion) {
+    return (
+      <>
+      { pageYPosition > 1600 && 
+        <Button
+          display='flex'
+          alignSelf='center'
+          top='10'
+          type="button" 
+          onClick={scrollToTop}
+          position='fixed'
+          bg='blue.500'
+          borderWidth={3}
+          borderColor='yellow.400'
+          boxShadow='lg'
+          transform='rotate(-3deg)'
+          transition='transform 200ms ease'
+          _hover={{transform: 'rotate(0deg) scale(1.04)'}}
+        >
+          <Text color='white'>Back to top</Text>
+          <Image src="./pokebolaS.png" w='6' h='6' ml='2' />
+        </Button>
+      }
+    </>
+    )
+  }
+
   return (
     <>
       { pageYPosition > 1600 && 
@@ -27,15 +59,15 @@ export function ScrollToTopButton() {
           position='fixed'
           bottom='32'
           right='5'
-          bg='yellow.400'
+          bg='blue.500'
           borderWidth={3}
-          borderColor='blue.500'
+          borderColor='yellow.400'
           boxShadow='lg'
           transform='rotate(-3deg)'
           transition='transform 200ms ease'
           _hover={{transform: 'rotate(0deg) scale(1.04)'}}
         >
-          <Text>Back to top</Text>
+          <Text color='white'>Back to top</Text>
           <Image src="./pokebolaS.png" w='6' h='6' ml='2' />
         </Button>
       }

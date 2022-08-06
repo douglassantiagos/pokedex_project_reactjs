@@ -9,7 +9,7 @@ import { PokemonCard } from "../components/PokemonCard";
 import { Footer } from "../components/Footer";
 import { getAllPokemons, getAllTypeData, getPokemon, getTypeData } from "../services";
 import Head from "next/head";
-import { ScrollToTopButton } from "../components/scrollToTopButton";
+import { ScrollToTopButton } from "../components/ScrollToTopButton";
 
 export default function Home() {
   const [pokemon, setPokemon] = useState("");
@@ -46,7 +46,6 @@ export default function Home() {
     
     const getPokemonSelected = toArray.map((pokemon, index) => {
       return {
-        key: index,
         id: pokemon.id,
         name: pokemon.name,
         image: pokemon.sprites.other['official-artwork'].front_default,
@@ -79,7 +78,6 @@ export default function Home() {
 
       const listAllPokemonsData = allPokemonsData.map((pokemon, index) => {
         return {
-          key: index,
           id: pokemon.id,
           name: pokemon.name,
           image: pokemon.sprites.other['official-artwork'].front_default,
@@ -140,7 +138,6 @@ export default function Home() {
       
       setPokemonsTypeSelectedData(pokemonsTypeSelected.map((pokemon, index) => {
         return {
-          key: index,
           id: pokemon.id,
           name: pokemon.name,
           image: pokemon.sprites.other['official-artwork'].front_default,
@@ -159,7 +156,9 @@ export default function Home() {
   }, [typeSelected])
 
   useEffect(() => {
-    typeSelected === "All" ? setPokemonsToShow(pokemonData) : setPokemonsToShow(pokemonsTypeSelectedData);
+    typeSelected === "All" 
+      ? setPokemonsToShow(pokemonData) 
+      : setPokemonsToShow(pokemonsTypeSelectedData);
 
   }, [
     pokemonData,
@@ -182,7 +181,7 @@ export default function Home() {
 
   const handleShowMoreCards = () => {
     setAmountCardsOnPage(amountCardsOnPage + 9)
-  }  
+  } 
    
   return (
     <>    

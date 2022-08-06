@@ -5,24 +5,11 @@ import { typeColors } from '../utils/typeColors';
 import { formattedID } from '../utils/formattedID';
 import { getTypeData } from '../services';
 
-export type ColorsData = {
-  primary: string;
-  secondary: string;
-}
-
-export default function Modal({ data, onType }) { 
-  const [colors, setColors] = useState<ColorsData>({} as ColorsData)
+export default function Modal({ data, onType, colors }) { 
   const [ability, setAbility] = useState([])
   const [weakness, setWeakness] = useState([])
   const [statName, setStatName] = useState([])
   const [amountStat, setAmountStat] = useState([])
-
-  async function getTypesNameData() {      
-    const promisesTypesData = await data.types.map((item) => item.type.name);
-    const typesData = await Promise.all(promisesTypesData);
-
-    setColors(typeColors(typesData))
-  }
 
   async function getAbilitiesNameData() {
     const promisesAbilitiesData = await data.abilities.map((item) => item.ability.name)
@@ -52,8 +39,7 @@ export default function Modal({ data, onType }) {
     console.log('STATS: ', amountStatsData)
   }
   
-  useEffect(() => {  
-    getTypesNameData();
+  useEffect(() => { 
     getAbilitiesNameData();
     getWeaknessesData();
     getStatsData()

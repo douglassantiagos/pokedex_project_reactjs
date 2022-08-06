@@ -12,8 +12,7 @@ export type ColorsData = {
 
 export function PokemonCard({ onPokemonData }) {
   const [colors, setColors] = useState<ColorsData>({} as ColorsData)
-  const [allTypesData, setAllTypesData] = useState([])
-  
+  const [allTypesData, setAllTypesData] = useState([])  
   const [selectedId, setSelectedId] = useState(null)
 
   async function getTypesNameData() {      
@@ -115,7 +114,7 @@ export function PokemonCard({ onPokemonData }) {
         <AnimatePresence>
           {selectedId && (
             <motion.button layoutId={selectedId} onClick={() => setSelectedId(null)}>
-              <Modal data={onPokemonData} onType={allTypesData} />
+              <Modal data={onPokemonData} onType={allTypesData} colors={colors} />
             </motion.button>
           )}
         </AnimatePresence>
@@ -167,7 +166,6 @@ export function PokemonCard({ onPokemonData }) {
               variants={item}
               src={onPokemonData.image} 
               style={{ maxWidth: '70%', maxHeight: 170, padding: 2, marginTop: 8, justifyContent: 'center'}}
-              // maxW='70%' maxH='170' p='2' mt='2' justifyContent='center'
             />
           </Flex>
 
@@ -183,7 +181,7 @@ export function PokemonCard({ onPokemonData }) {
       <AnimatePresence>
         {selectedId && (
           <motion.button layoutId={selectedId} onClick={() => setSelectedId(null)}>
-            <Modal data={onPokemonData} onType={allTypesData} />
+            <Modal data={onPokemonData} onType={allTypesData} colors={colors} />
           </motion.button>
         )}
       </AnimatePresence>
