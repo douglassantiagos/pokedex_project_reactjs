@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Head from "next/head";
-import { Grid, Flex, Text, Image, Button, Stack} from "@chakra-ui/react";
+import { Grid, Flex, Text, Image, Button } from "@chakra-ui/react";
 
 import { Header } from "../components/Header";
 import { SearchInput } from "../components/SearchInput";
@@ -39,12 +39,10 @@ export default function Home() {
 
   async function selectPokemon(pokemon) {
     const toArray = [];
-
-    const apiPokemonData = await getPokemon(pokemon)
-
-    toArray.push(apiPokemonData)
+    const apiPokemonData = await getPokemon(pokemon);
+    toArray.push(apiPokemonData);
     
-    const getPokemonSelected = toArray.map((pokemon, index) => {
+    const getPokemonSelected = toArray.map((pokemon) => {
       return {
         id: pokemon.id,
         name: pokemon.name,
@@ -59,6 +57,7 @@ export default function Home() {
 
     setPokemonsToShow(getPokemonSelected);
   }
+
   
   useEffect(() => {
     async function fetchPokemonData() {
@@ -159,7 +158,6 @@ export default function Home() {
     typeSelected === "All" 
       ? setPokemonsToShow(pokemonData) 
       : setPokemonsToShow(pokemonsTypeSelectedData);
-
   }, [
     pokemonData,
     typeSelected,
@@ -167,7 +165,9 @@ export default function Home() {
   ])
 
   useEffect(() => {
-    pokemonsToShow.length > 0 ? setIsLoadingData(false) : setIsLoadingData(true);
+    pokemonsToShow.length > 0 
+      ? setIsLoadingData(false) 
+      : setIsLoadingData(true);
   }, [])
 
   useEffect(() => {
