@@ -43,7 +43,7 @@ export function ScrollToTopButton() {
           _hover={{transform: 'rotate(0deg) scale(1.04)'}}
         >
           <Text color='white'>Back to top</Text>
-          <Image src="./pokebolaS.png" w='6' h='6' ml='2' />
+          <Image src="./pokebolaS.png" alt='pokeball' w='6' h='6' ml='2' />
         </Button>
       }
     </>
@@ -68,7 +68,7 @@ export function ScrollToTopButton() {
           _hover={{transform: 'rotate(0deg) scale(1.04)'}}
         >
           <Text color='white'>Back to top</Text>
-          <Image src="./pokebolaS.png" w='6' h='6' ml='2' />
+          <Image src="./pokebolaS.png" alt='pokeball' w='6' h='6' ml='2' />
         </Button>
       }
     </>

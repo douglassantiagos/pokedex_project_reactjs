@@ -4,7 +4,7 @@ export function Header() {
   return (
     <Flex bgGradient='linear(to-b, #C20001, #B50001)' p='5' justify='center'>
       <Link href='/'>
-        <Image src="../logo.svg"/>      
+        <Image src="../logo.svg" alt='logo pokemon' />      
       </Link>
     </Flex>
   )

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Flex, Stack, Text, HStack, VStack } from '@chakra-ui/react';
+import { Flex, Stack, Text, HStack, VStack, Image } from '@chakra-ui/react';
 import { motion } from "framer-motion"
 import { formattedID } from '../../utils/formattedID';
 import { getTypeData } from '../../services';
@@ -69,7 +69,7 @@ export default function Modal({ data, onType, colors }) {
                 h={'90%'}
                 align='center'      
               >
-                <img className="card-image" src={data.image} alt="ImagePokemon" />
+                <Image className="card-image" src={data.image} alt="ImagePokemon" />
               </Flex>
             </motion.div>
 

@@ -56,7 +56,8 @@ export function Sidebar({ handleClickCallback, onListTypeNames, selected, ...res
           {...rest}
         >
           <Image 
-            src={selected === 'All' ? '../pokebolaA.png' : '../pokebolaS.png'} 
+            src={selected === 'All' ? '../pokebolaA.png' : '../pokebolaS.png'}
+            alt='pokeball'
             w={selected === 'All' ? '7' : '5'} 
             h={selected === 'All' ? '7' : '5'}  
           />
@@ -89,7 +90,8 @@ export function Sidebar({ handleClickCallback, onListTypeNames, selected, ...res
             {...rest}
           >
             <Image 
-              src={selected === name ? '../pokebolaA.png' : '../pokebolaS.png'} 
+              src={selected === name ? '../pokebolaA.png' : '../pokebolaS.png'}
+              alt='pokeball'
               w={selected === name ? '7' : '5'}
               h={selected === name ? '7' : '5'} 
             />

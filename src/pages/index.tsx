@@ -233,7 +233,7 @@ export default function Home() {
 
           <Flex  direction='column' maxW={[,'77%']} >
             <Flex mb='8'>
-              <Image src='../pokebolaA.png' w='6' h='6' mr='4' />                
+              <Image src='../pokebolaA.png' alt='pokebola loading' w='6' h='6' mr='4' />                
               <Text mr='1' fontWeight='bold'>
                 {typeSelected === 'All' ? '1154' : pokemonsToShow.length} Pokémons
               </Text>
