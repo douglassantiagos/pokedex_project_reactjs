@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Flex, Stack, Text, HStack, VStack, Image } from '@chakra-ui/react';
+import { Flex, Stack, Text, HStack, VStack, Image, useBreakpointValue } from '@chakra-ui/react';
 import { motion } from "framer-motion"
 import { formattedID } from '../../utils/formattedID';
 import { getTypeData } from '../../services';

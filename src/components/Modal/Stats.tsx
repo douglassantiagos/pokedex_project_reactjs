@@ -1,4 +1,4 @@
-import { HStack, Text } from "@chakra-ui/react";
+import { HStack, VStack, Text } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 interface StatsProps {
