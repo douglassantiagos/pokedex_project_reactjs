@@ -89,7 +89,7 @@ export default function Home() {
       })
 
       setPokemonData([...pokemonData, ...listAllPokemonsData]);
-      setIsLoadingData(false); //mudo setIsLoadingData() para falso, pois os dados já foram carregados
+      setIsLoadingData(false);
       setIsLoadingNextCard(false); 
     }
 

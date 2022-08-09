@@ -25,7 +25,6 @@ export function PokemonCard({ onPokemonData }) {
   
   useEffect(() => {  
     getTypesNameData();
-
   }, [])
 
   const container = {

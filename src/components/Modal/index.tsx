@@ -5,6 +5,7 @@ import { formattedID } from '../../utils/formattedID';
 import { getTypeData } from '../../services';
 import { Stats } from './Stats'
 import { Weakness } from './Weakness';
+import { GetStaticProps } from 'next';
 
 export default function Modal({ data, onType, colors }) { 
   const [ability, setAbility] = useState([])
