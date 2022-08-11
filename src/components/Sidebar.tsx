@@ -13,7 +13,7 @@ export function Sidebar({ handleClickCallback, onListTypeNames, selected, ...res
 
   if (!isWideVersion) {
     return (
-      <FormControl px={['10', '20']} mb='12'>
+      <FormControl px={['5', '24']} mb='12'>
         <Select 
           size='lg' 
           variant='outline'
