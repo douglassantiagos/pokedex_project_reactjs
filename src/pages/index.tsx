@@ -65,7 +65,7 @@ export default function Home() {
       if (typeSelected !== 'All') return;
       
       const apiMainData = await getAllPokemons(limitCardsOnPage, amountCardsOnPage - 9);
-
+      
       setIsLoadingNextCard(true)
 
       // recebo todos os dados de todos os pokemons
@@ -90,7 +90,7 @@ export default function Home() {
 
       setPokemonData([...pokemonData, ...listAllPokemonsData]);
       setIsLoadingData(false);
-      setIsLoadingNextCard(false); 
+      setIsLoadingNextCard(false);
     }
 
     fetchPokemonData();
@@ -230,7 +230,6 @@ export default function Home() {
             <Loading />
           </Flex> :
 
-
           <Flex  direction='column' maxW={[,'77%']} >
             <Flex mb='8'>
               <Image src='../pokebolaA.png' alt='pokebola loading' w='6' h='6' mr='4' />                
@@ -239,7 +238,7 @@ export default function Home() {
               </Text>
             </Flex>
 
-            <Grid gap={[4, 4, 4, 7]} alignItems='flex-start' templateColumns={['repeat(2, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}>
+            <Grid gap={[3, 4, 4, 7]} alignItems='flex-start' templateColumns={['repeat(2, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}>
               { pokemonsToShow.map((item, index) => {
                 return (
                   <PokemonCard               

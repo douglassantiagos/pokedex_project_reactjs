@@ -9,12 +9,6 @@
   padding: 45px 25px;
 }
 
-.date {
-  color: var(--secondary);
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
 .card {
   position: relative;
   padding: 25px;
@@ -54,6 +48,8 @@
   z-index: 1;
   overflow: hidden;
   padding: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card-content {
@@ -72,6 +68,7 @@
   max-width: 700px;
   overflow: hidden;
   pointer-events: none;
+  background-color: white;
 }
 
 .card-open-link {
@@ -83,7 +80,6 @@
 }
 
 .card-image-container {
-  // position: absolute;
   top: 0;
   left: 0;
   overflow: hidden;
@@ -93,7 +89,7 @@
 
 .open .card-image-container,
 .open .title-container {
-  z-index: 1;
+  z-index: 1;  
 }
 
 .title-container {
@@ -105,12 +101,11 @@
 
 .open .title-container {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-end;
   top: 15px;
   right: 25px;
-  max-height: 100vh;
+  height: 95%;
 }
 
 .type {
