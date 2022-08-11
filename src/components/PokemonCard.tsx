@@ -66,7 +66,7 @@ export function PokemonCard({ onPokemonData }) {
           animate="visible" 
           whileHover={{ scale: 1.1 }} 
         >
-          <Stack direction='column' maxW='230' bg={colors.primary} borderRadius='16' p='2' shadow='md'>
+          <Stack direction='column' maxW='170' bg={colors.primary} borderRadius='16' p='2' shadow='md'>
             <HStack justify='space-between'>
               <Flex>
                 <Text fontSize='sm' color='white' fontWeight='normal' bg='whiteAlpha.300' w='auto' borderRadius='20' p='1' px='4'>   
@@ -94,7 +94,7 @@ export function PokemonCard({ onPokemonData }) {
               <motion.img
                 variants={item}
                 src={onPokemonData.image} 
-                style={{ maxWidth: '100%', maxHeight: 170, padding: 2, marginTop: 8, justifyContent: 'center'}}
+                style={{ maxWidth: '100%', maxHeight: 170, padding: 2, justifyContent: 'center'}}
               />
             </Flex>
 
