@@ -9,6 +9,12 @@
   padding: 45px 25px;
 }
 
+.date {
+  color: var(--secondary);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
 .card {
   position: relative;
   padding: 25px;
@@ -171,8 +177,4 @@
     flex: 1 0 100%;
     max-width: 100%;
   }
-
-  // .card-content-container.open {
-  //   padding: 0;
-  // }
 }
