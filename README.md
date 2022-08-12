@@ -7,7 +7,9 @@
   Aplicação com informações detalhadas de todos os pokemons do universo pokemon. Aplicação responsiva desenvolvido para web consumindo uma API externa.
 </p>
 
-## <h3> 🔖 Layout</h3>
+<img src="public/pokedexgif.gif" width="220px" />
+
+<h3> 🔖 Layout</h3>
 Layout desenvolvido pensando na experiência do usuário com cores vivas e animações. Os pokemons estão representados em cards contendo nome, imagem, tipos e id. 
 Para exibição dos cards pode-se filtrar pelos tipos na sidebar. Os detalhes de cada pokemons é exibido por um modal ao clicar no card selecionado. 
 
