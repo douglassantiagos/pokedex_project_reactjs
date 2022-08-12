@@ -36,7 +36,7 @@ export function Sidebar({ handleClickCallback, onListTypeNames, selected, ...res
   }
 
   return (
-    <Box as='aside' minW='18%' borderRightWidth={1} borderColor='gray.100'>     
+    <Box as='aside' minW='18%' borderRightWidth={1} borderColor="gray.100">     
       <Stack spacing='4' align='start'>
         <Button
           p='0'
