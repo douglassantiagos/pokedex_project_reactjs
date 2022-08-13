@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Flex, Stack, Text, HStack, VStack, Image, useBreakpointValue } from '@chakra-ui/react';
+import { Flex, Text, HStack, VStack, Image, useBreakpointValue } from '@chakra-ui/react';
 import { motion } from "framer-motion"
 import { formattedID } from '../../utils/formattedID';
 import { getTypeData } from '../../services';
 import { Stats } from './Stats'
 import { Weakness } from './Weakness';
-import { GetStaticProps } from 'next';
 
 export default function Modal({ data, onType, colors }) { 
   const [ability, setAbility] = useState([])

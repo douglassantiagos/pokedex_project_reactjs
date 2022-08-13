@@ -97,9 +97,7 @@ export default function Home() {
   }, [amountCardsOnPage, typeSelected]);
 
   useEffect(() => {
-    async function fetchTypesData() {
-      setIsLoadingData(true)
-
+    async function fetchListTypeNames() {      
       const apiTypesList = await getAllTypeData(); // recebo todos os dados do endpoint 'type'
       const listAllTypeName = await apiTypesList.results.map((type) => type.name);
 
@@ -108,8 +106,13 @@ export default function Home() {
       );
 
       setListTypeNames(listTypeNames); // nome de todos os tipos de pokemons
+    }
 
-      //teste
+    async function fetchTypeSelectedData() {
+      setIsLoadingData(true)
+
+      const apiTypesList = await getAllTypeData(); // recebo todos os dados do endpoint 'type'
+
       if (typeSelected === "All") return;
 
       const promisesEachTypeData = apiTypesList.results.map((type) => getTypeData(type.url)) // recebendo a url de cada tipo
@@ -150,8 +153,9 @@ export default function Home() {
 
       setIsLoadingData(false)
     }
-    
-    fetchTypesData();
+
+    fetchListTypeNames()
+    fetchTypeSelectedData();
   }, [typeSelected])
 
   useEffect(() => {

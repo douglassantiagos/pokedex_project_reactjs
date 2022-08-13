@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Flex, HStack, Image, Stack, Text, useDisclosure, Link, useBreakpointValue } from "@chakra-ui/react";
+import { Flex, HStack, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion"
 
 import { formattedID } from "../utils/formattedID";

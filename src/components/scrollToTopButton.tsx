@@ -1,4 +1,4 @@
-import { Button, Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Button, Image, Text, useBreakpointValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 export function ScrollToTopButton() {
