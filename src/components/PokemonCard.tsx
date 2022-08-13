@@ -69,12 +69,12 @@ export function PokemonCard({ onPokemonData }) {
           <Stack direction='column' maxW='170' bg={colors.primary} borderRadius='16' p='2' shadow='md'>
             <HStack justify='space-between'>
               <Flex>
-                <Text fontSize='sm' color='white' fontWeight='normal' bg='whiteAlpha.300' w='auto' borderRadius='20' p='1' px='4'>   
+                <Text fontSize='sm' color='white' fontWeight='normal' bg='whiteAlpha.300' w='auto' borderRadius='20' p='1' px='2'>   
                   {(allTypesData[0]+ ' ').charAt(0).toUpperCase() + 
                   (allTypesData[0]+ ' ').slice(1)}           
                 </Text>
                 {allTypesData[1] === undefined ? null :
-                  <Text fontSize='sm' color='white' fontWeight='normal' ml='1' bg={allTypesData[1] === 'undefined' ? null : 'whiteAlpha.300'} w='auto' borderRadius='20' p='1' px='4'>   
+                  <Text fontSize='sm' color='white' fontWeight='normal' ml='1' bg={allTypesData[1] === 'undefined' ? null : 'whiteAlpha.300'} w='auto' borderRadius='20' p='1' px='2'>   
                     {(allTypesData[1]).charAt(0).toUpperCase() + 
                     (allTypesData[1]).slice(1)}         
                   </Text>            
