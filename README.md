@@ -1,13 +1,18 @@
-<h1 dir='auto'>
+<h1 align="center">
   Pokedex Project
   <img src='https://pokedex-project-reactjs.vercel.app/pokebolaS.png' alt='pokeball' width='25'  />
 </h1>
 
+<p align="center">
+  <img src="public/pokedexgif.gif" width='500' />
+</p>
+
+ <h3>💻 Projeto</h3>
 <p dir="auto">
   Aplicação com informações detalhadas de todos os pokemons do universo pokemon. Aplicação responsiva desenvolvido para web consumindo uma API externa.
 </p>
 
-## <h3> 🔖 Layout</h3>
+## <h3> 🎨 Layout</h3>
 Layout desenvolvido pensando na experiência do usuário com cores vivas e animações. Os pokemons estão representados em cards contendo nome, imagem, tipos e id. 
 Para exibição dos cards pode-se filtrar pelos tipos na sidebar. Os detalhes de cada pokemons é exibido por um modal ao clicar no card selecionado. 
 
@@ -24,3 +29,5 @@ Para exibição dos cards pode-se filtrar pelos tipos na sidebar. Os detalhes de
 ## <a href="https://pokedex-project-reactjs.vercel.app/" rel="nofollow">
   <img src="https://user-images.githubusercontent.com/71772559/178192066-d52e0cf7-906e-4baa-80f3-4b49dde153c0.png" style="max-width: 100%;">
 </a>
+
+<p align='center'>Desenvolvido por Douglas Santiago :wave:</p>
